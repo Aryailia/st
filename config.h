@@ -240,6 +240,7 @@ static MouseShortcut mshortcuts[] = {
 #define MODKEY Mod1Mask
 #define TERMMOD (ControlMask|ShiftMask)
 
+/* Refer to /usr/include/x11/keysymdef.h for keysym  */
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
 	{ XK_ANY_MOD,           XK_Break,       sendbreak,      {.i =  0} },
@@ -264,12 +265,12 @@ static Shortcut shortcuts[] = {
 	{ MODKEY,               XK_Down,        kscrolldown,    {.i =  1} },
 	{ MODKEY,               XK_u,           kscrollup,      {.i = -1} },
 	{ MODKEY,               XK_d,           kscrolldown,    {.i = -1} },
-	{ TERMMOD,              XK_Up,          zoom,           {.f = +1} },
-	{ TERMMOD,              XK_Down,        zoom,           {.f = -1} },
-	{ TERMMOD,              XK_K,           zoom,           {.f = +1} },
-	{ TERMMOD,              XK_J,           zoom,           {.f = -1} },
-	{ TERMMOD,              XK_U,           zoom,           {.f = +2} },
-	{ TERMMOD,              XK_D,           zoom,           {.f = -2} },
+	{ MODKEY,               XK_Right,       zoom,           {.f = +1} },
+	{ MODKEY,               XK_Left,        zoom,           {.f = -1} },
+	{ MODKEY,               XK_l,           zoom,           {.f = +1} },
+	{ MODKEY,               XK_h,           zoom,           {.f = -1} },
+	{ TERMMOD,              XK_plus,        zoom,           {.f = +2} },
+	{ TERMMOD,              XK_underscore,  zoom,           {.f = -2} },
 };
 
 /*
